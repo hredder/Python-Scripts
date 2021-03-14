@@ -2,6 +2,9 @@ from matplotlib import pyplot as plt
 import numpy as np
 import random, math
 
+#Made by Henry Redder
+#Various numerical approaches to estimating integrals
+
 def func(x):
     return math.sin(2*x)*x
 
