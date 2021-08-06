@@ -1,3 +1,4 @@
+  
 from PIL import Image
 import cmath
 import math
@@ -13,8 +14,8 @@ def mandelbrot(count, seed, constant):
     return count
 
         
-WIDTH = 1080
-HEIGHT = 720
+WIDTH = 3840
+HEIGHT = 2160
 
 im = Image.new('RGB', (WIDTH, HEIGHT), color=0)
 pixels = im.load()
@@ -25,9 +26,8 @@ for x in range(WIDTH):
         realNum = 4*(x-WIDTH/2)/WIDTH
         complexNum = 2.5*(y-HEIGHT/2)/HEIGHT
         mand = mandelbrot(0,0, realNum + complexNum*1.0j)
-        color = int(255-mand)
-        pixels[x, y] = (color, color, color)
+        pixels[x, y] = (mand, mand, mand)
 
 im.show()
 #Optional Export
-#im.save("C:\\Users\\goali\\Desktop\\fractal.jpg")
+im.save("C:\\Users\\goali\\Desktop\\fractal.jpg")
